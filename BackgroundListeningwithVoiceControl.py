@@ -10,19 +10,12 @@ from time import sleep
 
 
 
-DEVELOPER_KEY = "AIZZZXXXXXXXXX" 
+DEVELOPER_KEY = "AIZXXXXXXXX" 
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
 youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,developerKey = DEVELOPER_KEY)
 
-
-#def startVLC():		
-	#system("vlc --intf telnet --telnet-password admin &")
-	#sleep(2)
-vlc = VLCClient("::1")		
-vlc.connect()
-print("VLC STARTED.....")	   
 			   
 def youtubePlay(output):
 	search_keyword = youtube.search().list(q = output, part = "id, snippet",maxResults = 1).execute()
@@ -79,41 +72,7 @@ def VLC_COMMANDS(output):
 
 # this is called from the background thread
 def callback(recognizer, audio):
-	# received audio data, now we'll recognize it using Google Speech Recognition
-		
-		'''
-		if "play" in output:
-			output = output.replace("play","")
-			if output!="":
-				URLS = youtubePlay(output)
-				play = vlc.add(URLS)
-				
-		if "add" in output:
-			output = output.replace("add","")
-			if output!="":
-				URLS = youtubePlay(output)
-				add = vlc.enqueue(URLS)
-				
-		
-		if "pause" == output:
-			vlc.pause()
-		if "resume" == output:
-			vlc.play()
-		if "increase volume" == output:
-			vlc.volup()
-		if "decrease volume" == output:
-			vlc.voldown()
-		if "show volume" == output:
-			volume = vlc.volume()
-			print(f"Volume is {volume}")
-		if "play next" == output:
-			vlc.next()
-		if "play previous" == output:
-			vlc.prev()
-		if "clear playlist" == output:
-			vlc.clear()
-
-			'''
+	# received audio data, now we'll recognize it using Google Speech Recognition			
 	try:
 		output = recognizer.recognize_google(audio)
 		print("WE THINKS: " + output)			
