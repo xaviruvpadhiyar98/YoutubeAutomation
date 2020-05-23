@@ -23,3 +23,12 @@ After creating your project, make sure the YouTube Data API is one of the servic
 Go to the API Console and select the project that you just registered.
 Visit the Enabled APIs page. In the list of APIs, make sure the status is ON for the YouTube Data API v3.
 If your application will use any API methods that require user authorization, read the authentication guide to learn how to implement OAuth 2.0 authorization.For more infomation visit https://developers.google.com/youtube/v3/getting-started
+
+
+# TO RUN VOICE CONTROLLED
+open terminal and run vlc 
+
+--intf telnet --telnet-password admin &
+
+
+and then run python3 AddedVoiceControl.py
