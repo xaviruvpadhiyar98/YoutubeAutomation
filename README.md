@@ -32,3 +32,4 @@ open terminal and run vlc
 
 
 and then run python3 AddedVoiceControl.py
+

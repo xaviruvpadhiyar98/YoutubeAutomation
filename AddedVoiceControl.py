@@ -9,7 +9,7 @@ mic = Microphone()
 
 
 
-DEVELOPER_KEY = "AIXXXXXXX" 
+DEVELOPER_KEY = "AIzaSyDeyCcahQ5EDOFcfZ25TzTSQqcUW9IM98w" 
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,developerKey = DEVELOPER_KEY)
@@ -69,9 +69,6 @@ def VLC_COMMANDS(output):
 		vlclib.clear()
 	if "stop" == output:
 		vlclib.stop()
-
-
-
 
 def start():
 	RecordnSave()    
